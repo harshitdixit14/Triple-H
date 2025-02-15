@@ -1,2 +1,13 @@
 day 1 
+    date = 15/02/25
+    HQ1= https://leetcode.com/problems/number-of-great-partitions/description/
+    description=
+    given 1D array nums and integer k we have to find count of partitions such that
+    sum of each partition in >= k.
+    so going other way around and finding the count in which at least one partition has sum<k
+    then subtracting the count with total count to have desired answer.
+    Reasoning behind why " finding negation of a problem "
+    => becoz first I tried the simple method which was requiring me to create a DP table which was
+    giving MLE as sum was exceeding memory limit.
+    This time with finding negation we only have to consider k sum only.
     
