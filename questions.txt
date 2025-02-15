@@ -10,4 +10,11 @@ day 1
     => becoz first I tried the simple method which was requiring me to create a DP table which was
     giving MLE as sum was exceeding memory limit.
     This time with finding negation we only have to consider k sum only.
-    
+    negation of the conditions that we have to count
+    (1) s1<k and s2<k
+    (2) s1<k and s2>=k
+    (3) s1>=k and s2<k
+    Now (1) will never occur because s1+s2>=2*k always true.
+    there fore answer = total_partitions - 2*invalid_count
+    as count(s1<k and s2>=k) == count(s1>=k and s2<k)
+
