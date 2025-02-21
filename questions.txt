@@ -18,3 +18,27 @@ day 1
     there fore answer = total_partitions - 2*invalid_count
     as count(s1<k and s2>=k) == count(s1>=k and s2<k)
 
+day 2
+    date = 21/02/25
+    HQ1= https://leetcode.com/problems/minimum-number-of-operations-to-make-arrays-similar/?envType=problem-list-v2&envId=greedy
+    description=
+    you are given two arrays nums and target in one operatio you can select pair of indices (i,j)
+    such that nums[i]=nums[i]+2 and nums[j]=nums[j]-2
+    return minimum number of operations required to convert nums to target
+
+    key point to notice =
+
+    by selecting indices we are either adding 2 or subtracting 2. By doing this we can only
+    convert even to another even number of odd to another odd number.
+    // Even to odd conversion is not possible
+    // another noticed point that count of even and odd in both nums and target are equal
+    // then only it is possible to convert nums to target
+    so by keeping this in mind I separated even and odd elements from both nums and target array
+    before that sorting nums and target so that resulting array also be sorted.
+    All the array are ( nums_odd, nums_even, target_odd, target_even )
+    traverse in nums_odd and target_odd parallely and compute number of operation required for
+    conversion
+    our formula becomes odd_operations = sum over all i such that 0<=i<=nums_odd.size() (abs(nums_odd[i]-target_odd[i])/2)
+    similarly for even_operations on nums_even and target_even
+    then return (odd_operations+even_operations)/2;
+    
