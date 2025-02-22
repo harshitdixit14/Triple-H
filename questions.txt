@@ -54,3 +54,32 @@ day 3
     By creating a 1D array consisting of (element, kth list) by merging all the sorted list
     and then finding the smallest range using slilding window.
     window slides when we have all the element from all k lists.
+
+    HQ2=https://leetcode.com/problems/minimize-deviation-in-array/description/?envType=problem-list-v2&envId=greedy
+    you are given nums array in which you have to minimize the deviation in nums
+    deviation is maximum difference between two numbers in an array
+    we can change the array using two operations done of any index
+    for index i
+
+    we can multiply by 2 if nums[i] is odd
+
+    we can divide by 2 if nums[i] is even
+
+    approach = 
+    key observations to find were that odd number will always become even. We can always reduce
+    even number by dividing by 2 so that number converges to odd number at last.
+
+    loop end or our search for problem ends when this large even number becomes odd. Means
+    it's no furthre reducible
+
+    steps =
+    1- change all the elements in array even and push them in a priority queue.
+    2- also find minimum in changed array.
+    3- while largest even number doesn't becomes odd our search continues.
+    4- we change maximum extracted value from priority queue by dividing it by 2
+    5- keep finding deviation by subtracting minimum value and maximum value.
+    6- if maximum value extracted becomes odd exit loop.
+    7- return deviation.
+
+
+
