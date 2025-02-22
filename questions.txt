@@ -41,4 +41,16 @@ day 2
     our formula becomes odd_operations = sum over all i such that 0<=i<=nums_odd.size() (abs(nums_odd[i]-target_odd[i])/2)
     similarly for even_operations on nums_even and target_even
     then return (odd_operations+even_operations)/2;
-    
+
+day 3
+    date = 22/02/25
+    HQ1=https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/?envType=problem-list-v2&envId=greedy
+    you are given 2D array of having different size k lists all those k lists are in increasing
+    order. You have to find smallest range such that this range contains at least one elements
+    from all k lists.
+    We define the range [a, b] is smaller than range [c, d] if b - a < d - c or a < c if b - a == d - c.
+
+    solution - 
+    By creating a 1D array consisting of (element, kth list) by merging all the sorted list
+    and then finding the smallest range using slilding window.
+    window slides when we have all the element from all k lists.
